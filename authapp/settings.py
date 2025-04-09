@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,19 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'authapp.wsgi.application'
+
+AUTH_USER_MODEL = 'app.User'
+
+
+SESSION_COOKIE_AGE = 7200
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SESSION_SAVE_EVERY_REQUEST = True
+
+LOGIN_REDIRECT_URL = '/app/'
+LOGOUT_REDIRECT_URL = '/app/'
+LOGIN_URL = 'login'
 
 
 # Database
