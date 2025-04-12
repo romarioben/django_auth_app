@@ -6,4 +6,5 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     "User derive from abstract User, we can add other field here if we want"
+    email = models.EmailField(verbose_name='Email', unique=True)
     

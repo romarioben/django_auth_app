@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
+    'auth_app',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'authapp.wsgi.application'
 
-AUTH_USER_MODEL = 'app.User'
+AUTH_USER_MODEL = 'auth_app.User'
 
 
 SESSION_COOKIE_AGE = 7200
@@ -78,9 +78,9 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SESSION_SAVE_EVERY_REQUEST = True
 
-LOGIN_REDIRECT_URL = '/app/'
-LOGOUT_REDIRECT_URL = '/app/'
-LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/auth_app/login/'
+LOGIN_URL = '/auth_app/login'
 
 
 # Database
@@ -134,3 +134,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+# EMAIL_HOST="smtp.gmail.com"
+# EMAIL_PORT=465
+# EMAIL_USE_SSL=True
+# EMAIL_HOST_USER="adesolaayodeji53@gmail.com"
+# EMAIL_HOST_PASSWORD="jjrc jimd yzcn ciws"

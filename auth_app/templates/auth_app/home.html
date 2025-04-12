@@ -1,0 +1,17 @@
+{% extends "auth_app/base.html" %}
+
+{% block title %}
+home page
+{% endblock title %}
+
+
+{% block main-content %}
+<h1>Welcome to the home page<h1>
+<div>
+    <h1>Logout</h1>
+    <form method="post" action={% url "logout" %}>
+        {% csrf_token %}
+        <input type="submit" value="se déconnecter" />
+    </form>
+</div>
+{% endblock main-content %}
